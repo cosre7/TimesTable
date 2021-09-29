@@ -27,7 +27,8 @@ import com.ts.timesTable.service.TimesTableService;
 public class TimesTableControllerTest {
 
 	/*
-	 * - @Autowired
+	 * - @Autowired : Spring Bean을 모두 뒤져서 클래스 타입과 같은 이름을 가지는 것이 있는지 찾아서
+	 *   변수에 할당해준다.
 	 * - 없으면 NullPointException이 뜬다 -> "this.timesTableService" is null
 	 * */
 	@Autowired

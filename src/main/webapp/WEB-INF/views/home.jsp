@@ -54,21 +54,20 @@
 		// [2][1] = 2 * 1 = 2 방식으로 저장되어있기 때문
 		
 		/* 반복문을 여러 개 돌리는 방식과 함수를 더 만들어서 호출하는 방식 중 어떤게 더 좋은 방법일까? */
+		var temp = "";
 		var src = "<table border=1>";
 		for (i = firstTimesNumber; i < value.length; i++) { // 첫번째 단 ~ 마지막 단 까지 출력(세로방향)
 			src += "<tr>";
-			
-			for (k = firstTimesNumber; k <= i; k++) { // 한 줄 당 첫번째 단 ~ i 단 까지 출력(가로방향)
-				src += "<td>";
-				
-				for (j = 1; j < value[i].length; j++) { // [2][1] -> 2 * 1 = 2 ... 출력
-					var color = (k % 2 == 1) ? "<font color=blue>" : "<font color=orange>";
-					src += color + value[k][j] + "<br>";
-					
-				}
-				src += "</td>";
+			temp += "<td>";
+			for (j = 1; j < value[i].length; j++) { // [2][1] -> 2 * 1 = 2 ... 출력
+				var color = (i % 2 == 1) ? "<font color=blue>" : "<font color=orange>";
+				temp += color + value[i][j] + "<br>";
 			}
+			temp += "</td>";
+				
+			src += temp;
 			src += "</tr>";
+			
 			
 		}
 		src += "</table>";
