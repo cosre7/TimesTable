@@ -35,6 +35,7 @@ public class TimesTableController {
 		
 		Gson gson = new Gson();
 		String gsonString = gson.toJson(table);
+		// toJson("Java 객체") -> Java 객체를 json 형식으로 변환
 		
 		return gsonString;
 	}
