@@ -32,17 +32,16 @@
 			method: "POST",
 			async: false,
 			beforeSend : function() {   
-			// controller에 data를 보내기 전 오류가 있을 때 데이터 전송을 막을 수 있는 방법
-			// beforeSend는 ajax를 요청하기 직전의 콜백함수이기 때문에 실행 전에 막을 수 있다.
+			// ajax 요청을 보내기 전 먼저 실행되는 함수
 				if (inputValue.firstTimes > inputValue.lastTimes) {
 					alert("첫 단이 마지막 단보다 작아야합니다.");
-					return false;
+					return false; 
+					// 이 함수가 실행되면 ajax 요청이 보내지지 않도록 해주는 부분 -> beforeSend 시점에서 중단!
 				}
+			},
+			success : function(returnValue) {
+				printTimesTable(returnValue);
 			}
-		})
-		// beforeSend에 문제가 없고 데이터도 정상적으로 받아오면 실행되는 함수
-		.done(function(returnValue) {
-			printTimesTable(returnValue);
 		});
 	});
 	
@@ -62,6 +61,7 @@
 			src += "<tr>";
 			
 			// <td>~</td> 내용을 temp에 저장하고 이를 src에 넣어준다 -> 같은 반복을 여러 번 해줄 필요가 없어진다.
+			// ex) 첫번째 반복 -> 2단 저장, 두번째 반복 -> 2단 + 3단 저장, 세번째 반복 -> 2단 + 3단 + 4단 저장 ..
 			temp += "<td>";
 			for (j = 1; j < value[i].length; j++) { // [2][1] -> 2 * 1 = 2 ... 출력
 				var color = (i % 2 == 1) ? "<font color=blue>" : "<font color=orange>";
