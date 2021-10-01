@@ -2,13 +2,13 @@ package com.ts.timesTable.service;
 
 import org.junit.Test;
 
-import com.ts.timesTable.domain.TimesTable;
+import com.ts.timesTable.vo.TimesTableVo;
 
 public class TimesTableServiceTest {
 
 	@Test
 	public void testGenerateTimesHashMap() {
-		TimesTable table = new TimesTable();
+		TimesTableVo table = new TimesTableVo();
 		table.setFirstTimes(2);
 		table.setLastTimes(9);
 		table.setFirstMultiplier(1);

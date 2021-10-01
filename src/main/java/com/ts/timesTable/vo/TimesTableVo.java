@@ -1,6 +1,6 @@
-package com.ts.timesTable.domain;
+package com.ts.timesTable.vo;
 
-public class TimesTable {
+public class TimesTableVo {
 
 	private int firstTimes;
 	private int lastTimes;

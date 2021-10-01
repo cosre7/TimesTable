@@ -7,8 +7,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.google.gson.Gson;
-import com.ts.timesTable.domain.TimesTable;
 import com.ts.timesTable.service.TimesTableService;
+import com.ts.timesTable.vo.TimesTableVo;
 
 /* 
  * - @RunWith : jUnit 프레임워크의 테스트 실행방법을 확장해준다.
@@ -24,6 +24,8 @@ import com.ts.timesTable.service.TimesTableService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:servlet-context.xml") // 설정 파일 위치
+// classpath: 를 사용하면 파일 이름을 써주면 되고
+// file: 을 사용하면 정확한 위치까지 표현해주어야 한다. 
 public class TimesTableControllerTest {
 
 	/*
@@ -36,7 +38,7 @@ public class TimesTableControllerTest {
 	
 	@Test
 	public void testCreate() {
-		TimesTable timesTable = new TimesTable();
+		TimesTableVo timesTable = new TimesTableVo();
 		timesTable.setFirstTimes(2);
 		timesTable.setLastTimes(9);
 		timesTable.setFirstMultiplier(1);

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
-import com.ts.timesTable.domain.TimesTable;
 import com.ts.timesTable.service.TimesTableService;
+import com.ts.timesTable.vo.TimesTableVo;
 
 @Controller
 public class TimesTableController {
@@ -23,7 +23,7 @@ public class TimesTableController {
 	
 	@ResponseBody
 	@RequestMapping(value= "/", method = RequestMethod.POST) 
-	public String create(TimesTable timesTable) {
+	public String create(TimesTableVo timesTable) {
 		
 		int firstMultiplier = 1;
 		

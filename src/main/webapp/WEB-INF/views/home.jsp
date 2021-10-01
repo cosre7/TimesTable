@@ -46,7 +46,7 @@
 	});
 	
 	function printTimesTable(returnValue) {
-		/* Q. inputValue를 파라미터로 받아오는 방식과 지금 방식 중 어떤게 더 좋은 방법일까? */
+		/* inputValue를 파라미터로 받아오는 방식과 지금 방식 중 어떤게 더 좋은 방법일까? */
 		var value = JSON.parse(returnValue);
 		var firstTimesNumber = value.filter((element) => null === element).length; // null개수 구하기
 		// null의 개수 = 시작 단 수
@@ -78,6 +78,7 @@
 		
 		// id=resultDiv 영역에 src 출력
 		$("#resultDiv").html(src);
+		console.log(value);
 	}
 	
 </script>
