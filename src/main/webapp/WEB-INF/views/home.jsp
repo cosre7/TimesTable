@@ -41,6 +41,7 @@
 			},
 			success : function(returnValue) {
 				printTimesTable(returnValue);
+				console.log(returnValue);
 			}
 		});
 	});
